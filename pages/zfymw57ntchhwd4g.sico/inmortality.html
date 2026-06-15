@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CLEVASY - INMORTALITY AND ITS SECRETS</title>
+    <style>
+        html {
+            background-color: black;
+            color: white;
+            font-family: "Times New Roman", Times, serif;
+        }
+        body {
+            margin: 40px;
+            line-height: 1.5;
+        }
+        .highlight {
+            color: red;
+            text-transform: uppercase;
+        }
+        button {
+            background: linear-gradient(to bottom, #ffffff, #ff4444);
+            border: 2px solid #888888;
+            color: black;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 6px 12px;
+            margin: 15px 0;
+            cursor: pointer;
+            border-radius: 0px;
+            box-shadow: 2px 2px 0px #555555;
+        }
+        button:hover {
+            background: linear-gradient(to bottom, #ff8888, #cc0000);
+        }
+        button:active {
+            transform: translate(2px, 2px);
+            box-shadow: none;
+        }
+        .hidden-text {
+            display: none;
+            margin-top: 15px;
+            border-left: 3px solid red;
+            padding-left: 15px;
+        }
+    </style>
+    <script>
+        function toggleText() {
+            var text = document.getElementById("moreText");
+            if (text.style.display === "none" || text.style.display === "") {
+                text.style.display = "block";
+            } else {
+                text.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>INMORTALITY AND ITS SECRETS</h1>
+
+    <p>the epic of <span class="highlight">gilgamesh</span>, written circa 2100 bce, is the oldest known literary work that addresses human mortality, <span class="highlight">gilgamesh</span> searches for the plant of immortality after the death of his companion enkidu, he finds the plant but loses it to a serpent while bathing, the text does not describe the plant but states that it had thorns and was located at the bottom of a body of water, some interpretations suggest the plant may have been a metaphor for acceptance of death rather than a literal object.</p>
+
+    <button onclick="toggleText()">READ MORE</button>
+
+    <div id="moreText" class="hidden-text">
+        <p><span class="highlight">the elixir of life</span> appears in alchemical texts from various traditions including chinese taoism, islamic alchemy, and european hermeticism, the chinese version was called the pill of immortality and was believed to be made from cinnabar, gold, and jade, several chinese emperors died from ingesting these preparations due to heavy metal poisoning, the taoist alchemist wei boyang wrote about the process in the book of the unity of the three, but his method was intentionally cryptic and no verifiable recipe survives.</p>
+
+        <p><span class="highlight">the philosopher stone</span> according to western alchemical texts was capable of transmuting lead into gold and also producing the elixir of life, the most famous description appears in the mutus liber which contains only illustrations and no written instructions, another text called the rosary of the philosophers describes the stone as a red powder, the alchemist nicolas flamel is sometimes associated with discovering the stone but historical records indicate he was a real person who died and was buried in paris.</p>
+
+        <p><span class="highlight">the count of saint germain</span> appeared in european courts during the 1700s and claimed to be centuries old, he spoke multiple languages fluently, never ate in public, and never aged visibly, he disappeared after his supposed death in 1784 but several people later claimed to have seen him alive, there is no physical evidence of his existence beyond paintings and written accounts, his birthplace remains unknown and his real name was never confirmed.</p>
+    </div>
+
+</body>
+</html>

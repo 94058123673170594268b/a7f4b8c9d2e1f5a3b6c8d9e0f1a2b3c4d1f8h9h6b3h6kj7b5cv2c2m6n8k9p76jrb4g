@@ -1,0 +1,71 @@
+1.0 FOREWORD
+
+This document serves as a functional overview of methodologies explored under the MK-ULTRA program umbrella. 
+The information contained herein is for historical reference and to inform current operational security protocols
+ regarding potential adversarial capabilities. The core objective of MK-ULTRA was to determine the feasibility of
+ creating a reliable mechanism for controlling human behavior, erasing and implanting memories, and securing intelligence
+ through non-physical means. The premise was that the human mind, under specific chemical, sensory, and psychological 
+stressors, could be "wiped" of its existing programming and made receptive to new instruction.
+
+2.0 PRIMARY METHODOLOGIES
+
+Research was subdivided into multiple branches, often operating without cross-branch knowledge for security purposes.
+
+2.1 CHEMICAL AGENTS (Sub-project 136):
+
+Extensive testing of psychoactive substances, primarily LSD (Lysergic Acid Diethylamide), was conducted to induce a state 
+of heightened suggestibility and ego dissolution. Dosages were administered to unwitting subjects across various social strata 
+to observe effects in controlled and uncontrolled environments.
+
+Other agents included mescaline, psilocybin, and a range of synthetic derivatives designed to create temporary amnesia or 
+complete psychological dependency on an interrogator.
+
+2.2 SENSORY DEPRIVATION & OVERLOAD (Sub-project 142):
+
+Subjects were placed in isolation tanks for prolonged periods to break down their sense of time and reality. The removal of
+ external stimuli was found to make an individual profoundly disoriented and eager for any form of input, including from an 
+interrogator.
+
+Conversely, sensory overload through constant light, unpredictable loud noises, and patterned visual stimuli was used to induce 
+a catatonic or highly compliant state.
+
+2.3 AUDIO-VISUAL ENTRAINMENT (Sub-project 148):
+
+This branch focused on the use of repetitive audio and visual cues to alter brainwave patterns. Subliminal messages embedded in 
+recorded audio or visual static were a primary vector of research.
+
+Two specific audio protocols, designated ULTRA1 and ULTRA2, were developed. These were not simple recordings but complex audio 
+patterns engineered to induce specific trance states. ULTRA1 was designed as a priming agent, using binaural beats and specific
+ frequency modulations to lower psychological defenses. ULTRA2 was the active implantation protocol, containing layered command
+ structures and affirmations masked beneath ambient sound. The effect was cumulative and required sequential exposure.
+ The existence of these audio files is confirmed. Analysis of their full effect profile remains ongoing.
+
+2.4 HYPNOSIS & SUGGESTION (Sub-project 140):
+
+Explored the potential for creating post-hypnotic triggers and amnesia barriers. Successful experiments demonstrated that 
+subjects could be triggered to perform specific actions days or weeks after initial programming, with no conscious memory
+ of the command.
+
+3.0 OPERATIONAL PROTOCOLS & SUBJECT HANDLING
+
+A subject processed under MK-ULTRA parameters was to be considered a blank slate. All prior allegiances, memories, and personality
+ traits were treated as ephemeral. The standard sequence involved:
+
+Phase 1: Softening. This involved sleep deprivation, dietary manipulation, and the initial administration of a mild chemical agent
+ or exposure to ULTRA1 audio.
+
+Phase 2: Unmaking. The core of the process. Intensive interrogation under heavy psychoactive influence, combined with sensory deprivation.
+ The goal was to shatter the subject's existing psyche.
+
+Phase 3: Rebuilding. During the subject's vulnerable state, new identities, loyalties, and commands were implanted. This phase often
+ utilized the ULTRA2 audio protocol or direct hypnotic suggestion.
+
+Phase 4: Sealing & Triggering. The subject's new programming was "sealed" through a specific trigger (a code word, a hand signal,
+ a specific piece of music). The subject would then be returned to a seemingly normal state until the trigger was activated.
+
+4.0 KNOWN RISKS & FAILURE MODES
+
+The program was fraught with unpredictable outcomes. The primary risk was catastrophic psychological breakdown, rendering the subject
+ useless. "Sleeper" agents often exhibited unpredictable behavior, and implanted commands could degrade or manifest in unintended ways.
+ The reliance on unwitting test subjects introduced immense variables. The technology was, and is, considered highly unstable and not fit
+ for reliable field deployment. The ethical breaches are self-evident.

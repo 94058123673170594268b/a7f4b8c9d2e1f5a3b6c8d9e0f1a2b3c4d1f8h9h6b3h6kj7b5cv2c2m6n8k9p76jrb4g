@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ἃ.666</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            font-family: "Times New Roman", Times, serif;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .login-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('passwallpaper.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .wrapper {
+            text-align: center;
+            padding: 50px 80px;
+            background-color: rgba(0, 0, 0, 0.85);
+            min-width: 600px;
+            width: auto;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: bold;
+            color: #00ff00;
+            margin-bottom: 40px;
+            background: linear-gradient(to bottom, #003300, #001a00);
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #00ff00;
+            border-radius: 14px 8px 16px 10px;
+            text-shadow: 2px 2px 0px #003300;
+            box-shadow: 3px 3px 0px #003300;
+            letter-spacing: 2px;
+        }
+
+        input {
+            background: linear-gradient(to bottom, #003300, #001a00);
+            border: 2px solid #00ff00;
+            color: #00ff00;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 16px;
+            padding: 10px 15px;
+            margin: 10px 0;
+            width: 320px;
+            text-align: center;
+            border-radius: 10px 6px 12px 8px;
+            box-shadow: inset 1px 1px 2px #00aa00, 2px 2px 0px #003300;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        input:focus {
+            outline: none;
+            background: linear-gradient(to bottom, #004400, #002200);
+        }
+
+        button {
+            background: linear-gradient(to bottom, #00aa00, #006600);
+            border: 2px solid #00ff00;
+            color: #00ff00;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 8px 24px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 12px 8px 14px 6px;
+            text-shadow: 1px 1px 0px #003300;
+            box-shadow: 2px 2px 0px #003300;
+            transition: all 0.1s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(to bottom, #00cc00, #008800);
+            color: black;
+            text-shadow: none;
+            transform: translate(1px, 1px);
+            box-shadow: 1px 1px 0px #003300;
+        }
+
+        button:active {
+            transform: translate(2px, 2px);
+            box-shadow: none;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #ff0000;
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #00ff00;
+            background: linear-gradient(to bottom, #003300, #001a00);
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #00ff00;
+            border-radius: 10px 6px 12px 8px;
+            text-shadow: 1px 1px 0px #003300;
+            box-shadow: 2px 2px 0px #003300;
+        }
+
+        .forum-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('passwallpaper.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: black;
+            z-index: 30;
+            display: none;
+            overflow-y: auto;
+            padding: 40px;
+        }
+
+        .forum-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 50px;
+        }
+
+        .forum-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #00ff00;
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(to bottom, #003300, #001a00);
+            display: inline-block;
+            width: auto;
+            padding: 10px 25px;
+            border-radius: 14px 8px 16px 10px;
+            text-shadow: 2px 2px 0px #003300;
+            box-shadow: 3px 3px 0px #003300;
+        }
+
+        .forum-post {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .post-author {
+            color: #00aa00;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .post-date {
+            color: #006600;
+            font-size: 11px;
+            margin-left: 15px;
+        }
+
+        .post-content {
+            color: #00ff00;
+            font-size: 15px;
+            line-height: 1.5;
+            margin-top: 10px;
+        }
+
+        .file-list {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #00aa00;
+        }
+
+        .file-item {
+            color: #00ff00;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        .file-link {
+            color: #00ff00;
+            text-decoration: none;
+            border-bottom: 1px dashed #00aa00;
+        }
+
+        .file-link:hover {
+            color: #00ffaa;
+            border-bottom-color: #00ffaa;
+        }
+
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 50;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            color: #00ff00;
+            font-size: 24px;
+            font-family: arial;
+        }
+    </style>
+    <script>
+        function checkAccess() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var msgDiv = document.getElementById("message");
+
+            var validUser = "L4&CyKkq*5UAVg6ZmBha$sLveY83z^ps$&#yLJ!gr8WjDxCw8NHygW*P1Ze7r*@p6pAuu5XJ%cmxsHnba48#&jsk#wmvT#ttUxjM@W^8#tm&@b#X$NaTB7H6VhZp@k9b";
+            var validPass = "YdcqH$2J^YxKfdKtF7gufTqu@TT*m@PD1V^mQuBgdr#LWduRcQGsE#1jzt#1zqC2pg9XPTDmD8T5gZ@5gRPd1f7dk*QbFzvC%tJ&pqtAGL#N@b^6TRyra5rhJAWVy4nZ!HK@XBAV2Jbs%m8217a69Acw**&tYY7Sgs@VjDwJ&ESB%N@fWTZCdrFtRm%N3eYKnJS$a%xQ&WsqmA2z*28GTwk81P%%eUfKA^@sKR6hcSTXkjVVSFpdyu7ax7W1Fetrc3urG4dPJ8y8&A@zgf!N6BPga4DHx5M@wUYg7sh2**fx3f65FMa6jxPfcNwF!6VtJYYk@#Q5UMFpcn#J#xcd1QD7c1MdQmR$KUdrqBmK#cx^V7tTGLC3^7K!YVFdCDwF";
+
+            if (username === validUser && password === validPass) {
+                var loginScreen = document.getElementById("login-screen");
+                var loadingScreen = document.getElementById("loading");
+                var forumScreen = document.getElementById("forum-screen");
+                var audio = document.getElementById("background-audio");
+
+                loginScreen.style.display = "none";
+                loadingScreen.style.display = "flex";
+
+                setTimeout(function() {
+                    loadingScreen.style.display = "none";
+                    forumScreen.style.display = "block";
+                    if (audio) {
+                        audio.play().catch(function(e) {});
+                    }
+                }, 500);
+
+                msgDiv.innerHTML = "";
+            } else {
+                msgDiv.innerHTML = "ACCÈS REFUSÉ. IDENTIFIANTS INCORRECTS.";
+                document.getElementById("username").value = "";
+                document.getElementById("password").value = "";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="login-screen" class="login-screen">
+        <div class="wrapper">
+            <h1>mk5qUltra</h1>
+            <input type="text" id="username" placeholder="username" autocomplete="off" value="">
+            <input type="password" id="password" placeholder="password" autocomplete="off" value="">
+            <button onclick="checkAccess()">ACCÉDER</button>
+            <div id="message" class="message"></div>
+            <div class="footer">MOT DE PASSE REQUIS : 1 KILOMÈTRE</div>
+        </div>
+    </div>
+
+    <div id="loading" class="loading">
+        <div>jiF./sS7WvrafrsPQbo.qBZ#rD*0~ZKZ9G+}dPN42Oi6R.AwxFw5()B%HVM]ct+Uhu2E?0C6mjT;8y6,S;.Lf+dH.tN!63hLv,?/+,||3Z6gry{Xhx!Zt--~4GRj&17E^J2eBtdaeS#x7@&xfz9ykkxa^r8qf1=/m^qOKmQ^$$V2k7#k&I^qM}~0n!eGY7#WXcnIB&M(X#^q7]xrh;TN&Y&wpzX)xvJjp1}s^L(YBSL^_EtWl_<N[v!wF[f&sOZlJFa^kf:z)mW(zvl:_&?2cp6szE2%>vPefGRzFbM1pEVz4^M&S^B^AJn#SJTyngTK</div>
+    </div>
+
+    <div id="forum-screen" class="forum-screen">
+        <div class="forum-container">
+            <div style="text-align: center;">
+                <div class="forum-title">UnRXWw$8&KqvS1QqveaB1hQNnZ5jr9n</div>
+            </div>
+            
+            <div class="forum-post">
+                <div>
+                    <span class="post-author">anon</span>
+                    <span class="post-date">2024-04-01 4:24 AM</span>
+                </div>
+                <div class="post-content">
+                    bonjour, les fichiers audio MK-ULTRA que je avez trouve sur un systeme scelle abandonne font partie d'une methode de controle mental, que je vous ai jointe, sois prudent.
+                </div>
+                <div class="file-list">
+                    <div class="file-item"> <a href="MindControl Tutorial.txt" class="file-link" target="_blank">MindControl Tutorial.txt</a></div>
+                    <div class="file-item"> <a href="Y1m4C5UGJuQw4y7nDU8Bl9jujNv9I07I.mp3" class="file-link" target="_blank">Y1m4C5UGJuQw4y7nDU8Bl9jujNv9I07I.mp3</a></div>
+                </div>
+            </div>
+
+            <div class="forum-post">
+                <div>
+                    <span class="post-author">b4l4nc3</span>
+                    <span class="post-date">2026-06-09 5:23 PM</span>
+                </div>
+                <div class="post-content">
+                    estos archivos han sido revisados, algunos contienen frecuencias ultrasinicas inaudibles. no los utilice sin protección auditiva. gracias por compartir!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="background-audio" src="curve41417.mp3" loop preload="auto"></audio>
+</body>
+</html>

